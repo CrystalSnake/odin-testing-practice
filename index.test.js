@@ -1,9 +1,17 @@
-const capitalize = require('./index');
+const index = require('./index');
 
 it('Lower case to capitalize', () => {
-  expect(capitalize('hello world!')).toBe('Hello world!');
+  expect(index.capitalize('hello world!')).toBe('Hello world!');
 });
 
 it('CAPS to capitalize', () => {
-  expect(capitalize('HELLO WORLD!')).toBe('Hello world!');
+  expect(index.capitalize('HELLO WORLD!')).toBe('Hello world!');
+});
+
+it('Reverse string simple', () => {
+  expect(index.reverse('Hello')).toBe('olleH');
+});
+
+it('Reverse string with punctuation', () => {
+  expect(index.reverse('Hello world!')).toBe('!dlrow olleH');
 });
