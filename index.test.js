@@ -39,3 +39,35 @@ it('Calculator divide', () => {
 it('Calculator divide by zero', () => {
   expect(index.calculator.divide(14, 0)).toBe(`Error: can't divide by zero`);
 });
+
+it('Caesar cipher simple', () => {
+  expect(index.caesar('abc', 1)).toBe('bcd');
+});
+
+it('Caesar cipher cycle', () => {
+  expect(index.caesar('xyz', 1)).toBe('yza');
+});
+
+it('Caesar cipher negative offset', () => {
+  expect(index.caesar('abc', -1)).toBe('zab');
+});
+
+it('Caesar cipher big offset', () => {
+  expect(index.caesar('abc', 100)).toBe('wxy');
+});
+
+it('Caesar cipher punctuation', () => {
+  expect(index.caesar('a bc!', 1)).toBe('b cd!');
+});
+
+it('Caesar cipher digits', () => {
+  expect(index.caesar('abc2', 1)).toBe('bcd2');
+});
+
+it('Caesar cipher same', () => {
+  expect(index.caesar('abc', 0)).toBe('abc');
+});
+
+it('Caesar cipher different case', () => {
+  expect(index.caesar('Abc', 1)).toBe('Bcd');
+});
