@@ -62,4 +62,14 @@ function caesar(inputString, offset) {
   return result;
 }
 
-module.exports = { capitalize, reverse, calculator, caesar };
+function analizeArray(array) {
+  const result = {};
+  const sum = array.reduce((a, b) => a + b, 0);
+  result.average = sum / array.length || null;
+  result.length = array.length || 0;
+  result.max = array.length ? Math.max(...array) : null;
+  result.min = array.length ? Math.min(...array) : null;
+  return result;
+}
+
+module.exports = { capitalize, reverse, calculator, caesar, analizeArray };
